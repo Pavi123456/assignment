@@ -1,33 +1,13 @@
 import java.util.*;
-import java.lang.*;
-import java.io.*;
-
-
-class Player_set4_4
-{
-	public static void main (String[] args) throws java.lang.Exception
-	{
-		Scanner s=new Scanner(System.in);
-		String str=s.next();
-		int k=s.nextInt();
-		char ch[]=str.toCharArray();int j=0;
-		char ch1[]=new char[str.length()];
-		if(k>str.length())
-		{
-			System.out.print(str);
-		}
-		else
-		{
-		for(int i=k;i<ch.length;i++)
-		{
-			ch1[j++]=ch[i];
-		}
-		for(int i=0;i<k;i++)
-		{
-			ch1[j++]=ch[i];
-		}
-		for(int i=0;i<ch.length;i++)
-		System.out.print(ch1[i]);
+public class Player-set4_4 {
+	public static void main(String args[]) {
+		Scanner scan = new Scanner(System.in);
+		String str = scan.next();
+		for(int i=0;i<str.length();i++) {
+			if(i%3==0) {
+				System.out.print(str.charAt(i));
+			}
 		}
 	}
+
 }

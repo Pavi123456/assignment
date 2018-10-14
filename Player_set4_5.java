@@ -1,27 +1,33 @@
-import java.util.Scanner;
-
+import java.util.*;
+import java.util.ArrayList;
 public class Player_set4_5{
-    public static void main(String[] args) {
-        Scanner in=new Scanner(System.in);
-        int P=in.nextInt(),l=0,b=0;
-        int A=in.nextInt();
-        P /= 2;
-        int a=P,flag=0;
-        for(int i=0;i<=P/2;i++)
-        {
-            if(i+a==P && i*a==A)
-            {
-                flag=1;
-                l=i;
-                b=a;
+    public static void main(String aa[]){
+      Scanner s=new Scanner(System.in);
+      String m=s.nextLine();
+      ArrayList<Character>a1=new ArrayList<Character>();
+      int sz=0;
+      char t='\0';
+      String a[]=m.split(" ");
+      for(int i=0;i<a.length;i++){
+          char x[]=a[i].toCharArray();
+          for(int j=0;j<x.length;j++){
+              a1.add(x[j]);
+          }
+            for(int k=0;k<x.length;k++){
+                if(k==0){
+                      sz=Collections.frequency(a1, x[k]);
+                      t=x[k];
+                }
+          else{
+                int y=Collections.frequency(a1, x[k]);
+                if(y>=sz){
+                   sz=y;
+                   t=x[k];
+                }
             }
-            a--;
-        }
-        if(flag!=0)
-            System.out.println("yes");
-        else
-                System.out.println("no");
-
-
-    }
-}
+            }
+          System.out.print(t+" ");
+           x=null;
+           a1.clear();
+                }
+}}
